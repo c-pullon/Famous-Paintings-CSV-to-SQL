@@ -39,6 +39,7 @@ connection_string = f"mssql+pyodbc://{server}/{database}?driver=ODBC+Driver+17+f
 - server: The name of the server hosting the SQL database.
 - database: The name of the database to connect to.
 - connection_string: A formatted string that specifies the details needed to connect to the SQL Server using the pyodbc driver and a trusted connection.
+
 **Create the engine**:
 ```python
 engine = create_engine(connection_string)
