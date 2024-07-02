@@ -1,6 +1,5 @@
 -- showing the museum which is open for the longest hours during a day
 -- CTE or subquery is needed as window functions like RANK() cannot be used directly in the WHERE clause of the same query where they are defined. 
--- Instead, you typically use them in a subquery or a common table expression (CTE) and then filter results in an outer query.
 -- Using a subquery:
 
 SELECT * FROM (
