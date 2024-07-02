@@ -19,6 +19,8 @@ Below are the formatting steps used in Power Query, and part of the resulting ta
 ![power_query_steps](power_query_steps.png)
 ![formatted_table](formatted_table.png)
 
+After this, I saved the formatted dataset as a CSV file, and kept the XLSX file to retain the Power Query steps if needed in the future. 
+
 ## 2) Python Data Import Script using SQLAlchemy
 The data is now ready to be uploaded to an SQL database using different libraries in Python.
 
@@ -165,4 +167,17 @@ SELECT TOP 1
     - The subquery with a window function can be more flexible if you need to add more complex criteria or calculations in the future. For example, if you want to find the top N museums with the longest open durations, the window function approach is more scalable.
     - The window function with RANK() handles ties better. If two museums have the exact same open duration, the RANK() function will assign the same rank to both, and you can decide how to handle those ties (e.g., by using DENSE_RANK() or ROW_NUMBER()).
     - Window functions are powerful tools for performing advanced analytics directly within the SQL query. They allow for more complex partitioning and ordering logic, which can be useful in more sophisticated analytical scenarios.
+
+## What I Learned
+- **Data cleaning with Power Query**:
+
+    - Power Query in Excel provides a user-friendly interface to perform data transformations such as filtering rows, renaming columns, and changing data types. These transformations are crucial for preparing the dataset for further analysis.
+    - I learned how to use various transformation functions to clean and reformat the data, making it consistent and ready for loading into a database.
+    - Power Query allows for the automation of repetitive data cleaning tasks. By saving query steps, I could easily apply the same transformations to similar datasets, saving time and reducing the risk of manual errors.
+
+- **Uploading CSV Files to SQL Database with Python**:
+    - I learned how to use the SQLAlchemy library to create a connection to an SQL Server database. This involved defining a connection string and creating an engine, which are fundamental steps for database interaction.
+    - I used the to_sql() method from Pandas to upload DataFrames to the SQL database. This method simplifies the process of inserting data into SQL tables, handling schema creation and data type conversion automatically.
+    This step demonstrated the ease and efficiency of using Python for database operations, especially when dealing with large datasets.
+    - By defining a function to import CSV files into SQL tables, I automated the data upload process. This function could be reused for different datasets, showcasing the power of Python for automating repetitive tasks.
 
